@@ -1,0 +1,34 @@
+{
+    "name": "repat/php-helper",
+    "description": "Some helper function for developing applications with PHP 7.2+",
+    "keywords": ["php", "helper", "files", "array", "database", "strings", "date"],
+    "homepage": "https://repat.de",
+    "license": "MIT",
+    "version" : "0.1",
+    "authors": [
+        {"name": "repat", "email": "repat@repat.de"}
+    ],
+    "require": {
+        "ext-curl": "*",
+        "nesbot/carbon": "^1.26.3 || ^2.0",
+        "laravel/helpers": "^1.1.1",
+        "php": ">=7.2",
+        "repat/date-constants": "*",
+        "repat/http-constants": "*",
+        "stevegrunwell/time-constants": "*"
+    },
+    "autoload": {
+        "files": [
+            "src/array_helpers.php",
+            "src/date_helpers.php",
+            "src/defines.php",
+            "src/html_helpers.php",
+            "src/misc_helpers.php",
+            "src/networking_helpers.php",
+            "src/object_helpers.php",
+            "src/optional_packages_helpers.php",
+            "src/string_helpers.php"
+        ]
+    },
+    "minimum-stability" : "dev"
+}
