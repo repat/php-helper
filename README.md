@@ -389,8 +389,8 @@ scrub_url('https://blog.fefe.de/?ts=a262bcdf');
 // returns: 'blog.fefe.de/?ts=a262bcdf'
 ```
 
-#### `http_status_code($url)`
-Returns just the status code by sending an empty request with [curl](https://curl.haxx.se/). Follows redirect so it will only return the last status code and not e.g. 301 Redirects. Requires `ext-curl`.
+#### `http_status_code($url, $follow = true)`
+Returns just the status code by sending an empty request with [curl](https://curl.haxx.se/). By default, it follows redirect so it will only return the last status code and not e.g. 301 Redirects. Disable following by setting the second parameter to `false`. Requires `ext-curl`.
 
 ```php
 http_status_code('httpstat.us/500');
@@ -398,6 +398,9 @@ http_status_code('httpstat.us/500');
 
 http_status_code('http://repat.de'); // with 301 redirect to https://repat.de
 // returns: 200
+
+http_status_code('http://repat.de', false);
+// returns: 301
 ```
 
 #### `parse_signed_request($request, $clientSecret, $algo)`
@@ -700,7 +703,7 @@ TLS_DHE_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_AES_256_CBC_SHA256, TLS_DH
 * MIT, see [LICENSE](https://github.com/repat/php-helper/blob/master/LICENSE)
 
 ## Version
-* Version 0.1
+* Version 0.1.1
 
 ## Contact
 #### repat

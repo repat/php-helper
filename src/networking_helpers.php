@@ -7,11 +7,11 @@ if (!function_exists('http_status_code')) {
      * @param string $url
      * @return int|bool
      */
-    function http_status_code(string $url)
+    function http_status_code(string $url, bool $follow = true)
     {
         $handle = curl_init($url);
         curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($handle, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($handle, CURLOPT_FOLLOWLOCATION, $follow);
         curl_setopt($handle, CURLOPT_HEADER, true);
         curl_setopt($handle, CURLOPT_NOBODY, true);
         $response = curl_exec($handle);
