@@ -499,7 +499,7 @@ hyphen2_('foo-bar');
 Replaces all underscore ("\_") characters with hyphen ("-")
 
 ```php
-hyphen2_('foo_bar');
+_2hypen('foo_bar');
 // returns: foo-bar
 ```
 
