@@ -254,3 +254,15 @@ if (!function_exists('uuid')) {
         return \Illuminate\Support\Str::uuid()->toString();
     }
 }
+
+if (!function_exists('normalize_nl')) {
+    /**
+     * Normalizes all new lines to \n
+     *
+     * @return string
+     */
+    function normalize_nl(string $string) : string
+    {
+        return str_replace(CR, LF, str_replace(CRLF, LF, $string));
+    }
+}

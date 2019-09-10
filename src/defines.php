@@ -57,6 +57,33 @@ if (! defined('NBSP')) {
     define('NBSP', "\xc2\xa0");
 }
 
+if (! defined('CR')) {
+    /**
+     * Carriage Return (MacOS)
+     *
+     * @var string
+     */
+    define('CR', "\r");
+}
+
+if (! defined('LF')) {
+    /**
+     * Line Feed (*nix)
+     *
+     * @var string
+     */
+    define('LF', "\n");
+}
+
+if (! defined('CRLF')) {
+    /**
+     * Carriage Return + Line Feed (Windows)
+     *
+     * @var string
+     */
+    define('CRLF', "\r\n");
+}
+
 /*
 |--------------------------------------------------------------------------
 | Networking

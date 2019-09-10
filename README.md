@@ -601,6 +601,20 @@ str_left('https://vimeo.com/165053513', '165053513');
 // returns: https://vimeo.com/
 ```
 
+#### `normalize_nl($string)`
+Normalizes all new lines characters (`\r`, `\n`, `\r\n`) to the UNIX newline `\n`.
+
+```php
+normalize_nl('foobar\r\n'); // Windows
+// returns: foobar\n
+
+normalize_nl('foobar\r'); // MacOS
+// returns: foobar\n
+
+normalize_nl('foobar\n'); // *nix
+// returns: foobar\n
+```
+
 ### Optional Packages
 Optional packages suggested by this are required for these functions to work.
 
@@ -703,7 +717,7 @@ TLS_DHE_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_AES_256_CBC_SHA256, TLS_DH
 * MIT, see [LICENSE](https://github.com/repat/php-helper/blob/master/LICENSE)
 
 ## Version
-* Version 0.1.1
+* Version 0.1.2
 
 ## Contact
 #### repat
