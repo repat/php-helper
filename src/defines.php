@@ -31,15 +31,6 @@ if (! defined('MARIADB_DEFAULT_STRLEN')) {
     define('MARIADB_DEFAULT_STRLEN', 191);
 }
 
-if (! defined('MULTIPLE_TRANS')) {
-    /**
-     * Minimum for trans_choice() to trigger the plural version
-     *
-     * @var int
-     */
-    define('MULTIPLE_TRANS', 2); // at least 2 is multiple
-}
-
 if (! defined('ONE_HUNDRED_PERCENT')) {
     /**
      * To avoid 100 being a Magic Number
@@ -48,6 +39,30 @@ if (! defined('ONE_HUNDRED_PERCENT')) {
      */
     define('ONE_HUNDRED_PERCENT', 100);
 }
+
+if (! defined('KILO')) {
+    /**
+     * From Greek = thousand, e.g. Kilogramm or Kilobyte
+     *
+     * @var int
+     */
+    define('KILO', 1000);
+}
+
+if (! defined('KIBI')) {
+    /**
+     * To tell apart KiloByte (1000 Byte) and KibiByte (1024 Byte)
+     *
+     * @var int
+     */
+    define('KIBI', 1024);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Characters
+|--------------------------------------------------------------------------
+*/
 
 if (! defined('NBSP')) {
     /**
@@ -136,6 +151,7 @@ if (! defined('WEAK_CIPHERS')) {
         'SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA'
     ]);
 }
+
 /*
 |--------------------------------------------------------------------------
 | Regex
@@ -157,6 +173,7 @@ if (! defined('REGEX_FIRST_RESULT_KEY')) {
      */
     define('REGEX_FIRST_RESULT_KEY', 1);
 }
+
 /*
 |--------------------------------------------------------------------------
 | Operating Systems

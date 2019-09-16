@@ -690,9 +690,13 @@ contrast_color('#496379');
 * `PARETO_HIGH`: 80
 * `PARETO_LOW`: 20
 * `MARIADB_DEFAULT_STRLEN`: 191
-* `MULTIPLE_TRANS`: 2
 * `ONE_HUNDRED_PERCENT`: 100
+* `KILO`: 1000
+* `KIBI`: 1024
 * `NBSP`: `\xc2\xa0`
+* `CR`: `\r`
+* `LF`: `\n`
+* `CRLF`: `\r\n`
 * `HTTP_1_0_VERBS`: [get, head, post]
 * `HTTP_1_1_VERBS`: [get, head, post, connect, delete, options, put, trace]
 * `HTTP_VERBS`: [get, head, post, connect, delete, options, put, trace, patch]
