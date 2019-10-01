@@ -132,3 +132,26 @@ if (!function_exists('gethostbyname6')) {
         return $domain;
     }
 }
+
+if (!function_exists('final_redirect_target')) {
+    /**
+     * Final redirect target URL or null
+     *
+     * @param  string $url
+     * @return string|null
+     */
+    function final_redirect_target(string $url) : ?string
+    {
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_NOBODY, 1);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1); // follow redirects
+        curl_setopt($ch, CURLOPT_AUTOREFERER, 1); // set referer on redirect
+        curl_exec($ch);
+        $target = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
+        curl_close($ch);
+        if (!empty($target)) {
+            return $target;
+        }
+        return null;
+    }
+}

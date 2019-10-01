@@ -461,6 +461,14 @@ is_public_ip($ipv6);
 // returns true;
 ```
 
+##### `final_redirect_target($url)`
+Follows all 301/302 redirects and returns the URL at the end of the chain, or `null`.
+
+```php
+final_redirect_target('http://google.com');
+// returns http://www.google.com
+```
+
 ### String
 #### `str_icontains($haystack, $needle)`    
 Similar to [Str::contains()](https://laravel.com/docs/5.7/helpers#method-str-contains) but case _insensitive_.
@@ -721,7 +729,7 @@ TLS_DHE_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_AES_256_CBC_SHA256, TLS_DH
 * MIT, see [LICENSE](https://github.com/repat/php-helper/blob/master/LICENSE)
 
 ## Version
-* Version 0.1.2
+* Version 0.1.4
 
 ## Contact
 #### repat
