@@ -623,6 +623,24 @@ normalize_nl('foobar\n'); // *nix
 // returns: foobar\n
 ```
 
+##### Wordpress
+These functions were pulled in from the [Open Source](https://en.wikipedia.org/wiki/Open-source_model) [Content Management System](https://en.wikipedia.org/wiki/Content_management_system) [Wordpress](https://wordpress.org), released under the [GPL 2](https://en.wikipedia.org/wiki/GNU_General_Public_License) (or later).
+
+* `mbstring_binary_safe_encoding()`
+* `reset_mbstring_encoding()`
+* `seems_utf8()`
+
+###### `remove_accents($string)`
+Removes special characters and replaces them with their ASCII counterparts
+
+```php
+remove_accents('á');
+// returns: a
+
+remove_accents('René')
+// returns: Rene
+```
+
 ### Optional Packages
 Optional packages suggested by this are required for these functions to work.
 
@@ -729,7 +747,7 @@ TLS_DHE_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_AES_256_CBC_SHA256, TLS_DH
 * MIT, see [LICENSE](https://github.com/repat/php-helper/blob/master/LICENSE)
 
 ## Version
-* Version 0.1.4
+* Version 0.1.5
 
 ## Contact
 #### repat

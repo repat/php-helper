@@ -4,7 +4,7 @@
     "keywords": ["php", "helper", "files", "array", "database", "strings", "date"],
     "homepage": "https://repat.de",
     "license": "MIT",
-    "version" : "0.1.4",
+    "version" : "0.1.5",
     "authors": [
         {"name": "repat", "email": "repat@repat.de"}
     ],
@@ -27,7 +27,8 @@
             "src/networking_helpers.php",
             "src/object_helpers.php",
             "src/optional_packages_helpers.php",
-            "src/string_helpers.php"
+            "src/string_helpers.php",
+            "src/wordpress.php"
         ]
     },
     "minimum-stability" : "dev",
