@@ -624,6 +624,34 @@ normalize_nl('foobar\n'); // *nix
 // returns: foobar\n
 ```
 
+#### `str_count_upper($string)`
+Counts upper case characters in a string. See also `str_count_lower()`.
+
+```php
+str_count_upper('FoObAr');
+// returns: 3
+
+str_count_upper('foobar');
+// returns: 0
+
+str_count_upper('FOOBAR');
+// returns: 6
+```
+
+#### `str_count_lower($string)`
+Counts lower case characters in a string. See also `str_count_upper()`.
+
+```php
+str_count_lower('FoObAr');
+// returns: 3
+
+str_count_lower('foobar');
+// returns: 6
+
+str_count_lower('FOOBAR');
+// returns: 0
+```
+
 ##### Wordpress
 These functions were pulled in from the [Open Source](https://en.wikipedia.org/wiki/Open-source_model) [Content Management System](https://en.wikipedia.org/wiki/Content_management_system) [Wordpress](https://wordpress.org), released under the [GPL 2](https://en.wikipedia.org/wiki/GNU_General_Public_License) (or later).
 
@@ -748,7 +776,7 @@ TLS_DHE_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_AES_256_CBC_SHA256, TLS_DH
 * MIT, see [LICENSE](https://github.com/repat/php-helper/blob/master/LICENSE)
 
 ## Version
-* Version 0.1.6
+* Version 0.1.7
 
 ## Contact
 #### repat

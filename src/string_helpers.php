@@ -1,6 +1,6 @@
 <?php
 
-if (!function_exists('str_icontains')) {
+if (! function_exists('str_icontains')) {
     /**
      * `str_contains()` case insensitive
      *
@@ -14,7 +14,7 @@ if (!function_exists('str_icontains')) {
     }
 }
 
-if (!function_exists('str_replace_once')) {
+if (! function_exists('str_replace_once')) {
     /**
      * Replaces a string only once (vs. `str_replace()`)
      *
@@ -36,7 +36,7 @@ if (!function_exists('str_replace_once')) {
     }
 }
 
-if (!function_exists('str_bytes')) {
+if (! function_exists('str_bytes')) {
     /**
      * Returns size of any text in bytes
      * Strings are expected to be in UTF-8 (incl ASCII) format
@@ -92,7 +92,7 @@ if (!function_exists('str_bytes')) {
     }
 }
 
-if (!function_exists('to_ascii')) {
+if (! function_exists('to_ascii')) {
     /**
      * Filters a raw string and only lets ACII characters through
      *
@@ -105,7 +105,7 @@ if (!function_exists('to_ascii')) {
     }
 }
 
-if (!function_exists('title_case_wo_underscore')) {
+if (! function_exists('title_case_wo_underscore')) {
     /**
      * `title_case` but with every underscore replaced by a space
      *
@@ -118,7 +118,7 @@ if (!function_exists('title_case_wo_underscore')) {
     }
 }
 
-if (!function_exists('hyphen2_')) {
+if (! function_exists('hyphen2_')) {
     /**
      * Replaces every hyphen("-") with underscore("_")
      *
@@ -131,7 +131,7 @@ if (!function_exists('hyphen2_')) {
     }
 }
 
-if (!function_exists('_2hyphen')) {
+if (! function_exists('_2hyphen')) {
     /**
      * Replaces every underscore("_") with hyphen("-")
      *
@@ -143,7 +143,7 @@ if (!function_exists('_2hyphen')) {
         return str_replace('_', '-', $string);
     }
 }
-if (!function_exists('regex_list')) {
+if (! function_exists('regex_list')) {
     /**
      * Regex string pipe separated for an array
      *
@@ -156,7 +156,7 @@ if (!function_exists('regex_list')) {
     }
 }
 
-if (!function_exists('base64_url_decode')) {
+if (! function_exists('base64_url_decode')) {
     /**
      * Decodes a base64 encoded url
      *
@@ -171,7 +171,7 @@ if (!function_exists('base64_url_decode')) {
     }
 }
 
-if (!function_exists('lorem_ipsum')) {
+if (! function_exists('lorem_ipsum')) {
     /**
      * Returns a very basic version of Lorem Ipsum placeholder text
      *
@@ -183,7 +183,7 @@ if (!function_exists('lorem_ipsum')) {
     }
 }
 
-if (!function_exists('sluggify_domain')) {
+if (! function_exists('sluggify_domain')) {
     /**
      * Creates a slug string especially for domains
      * because str_slug doesn't work for subdomains (. => _)
@@ -197,7 +197,7 @@ if (!function_exists('sluggify_domain')) {
     }
 }
 
-if (!function_exists('str_remove')) {
+if (! function_exists('str_remove')) {
     /**
      * Removes given string(s), syntactic sugar for str_replace
      * Returns null on error
@@ -208,14 +208,14 @@ if (!function_exists('str_remove')) {
      */
     function str_remove(string $string, $remove) : ?string
     {
-        if (!(is_array($remove) || is_string($remove) || is_numeric($remove))) {
+        if (! (is_array($remove) || is_string($remove) || is_numeric($remove))) {
             return null;
         }
         return str_replace($remove, '', $string);
     }
 }
 
-if (!function_exists('str_right')) {
+if (! function_exists('str_right')) {
     /**
      * Syntactic sugar for `str_after()`
      *
@@ -229,7 +229,7 @@ if (!function_exists('str_right')) {
     }
 }
 
-if (!function_exists('str_left')) {
+if (! function_exists('str_left')) {
     /**
      * Syntactic sugar for `str_before()`
      *
@@ -243,7 +243,7 @@ if (!function_exists('str_left')) {
     }
 }
 
-if (!function_exists('uuid')) {
+if (! function_exists('uuid')) {
     /**
      * Syntactic sugar `\Illuminate\Support\Str::uuid()->toString()`
      *
@@ -255,7 +255,7 @@ if (!function_exists('uuid')) {
     }
 }
 
-if (!function_exists('normalize_nl')) {
+if (! function_exists('normalize_nl')) {
     /**
      * Normalizes all new lines to \n
      *
@@ -264,5 +264,29 @@ if (!function_exists('normalize_nl')) {
     function normalize_nl(string $string) : string
     {
         return str_replace(CR, LF, str_replace(CRLF, LF, $string));
+    }
+}
+
+if (! function_exists('str_count_upper')) {
+    /**
+     * Counts uppercase case characters in string
+     *
+     * @return string
+     */
+    function str_count_upper(string $string) : int
+    {
+        return strlen(preg_replace('/[^A-Z]+/', '', $string));
+    }
+}
+
+if (! function_exists('str_count_lower')) {
+    /**
+     * Counts lowercase case characters in string
+     *
+     * @return string
+     */
+    function str_count_lower(string $string) : int
+    {
+        return strlen(preg_replace('/[^a-z]+/', '', $string));
     }
 }
