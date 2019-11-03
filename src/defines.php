@@ -212,6 +212,22 @@ if (! defined('BSD')) {
     define('BSD', 'bsd');
 }
 
+if (! defined('EXIT_SUCCESS')) {
+    /**
+     * Constant used by C/C++ for Success of Operation
+     * @var int
+     */
+    define('EXIT_SUCCESS', 0);
+}
+
+if (! defined('EXIT_FAILURE')) {
+    /**
+     * Constant used by C/C++ for Failure of Operation
+     * @var int
+     */
+    define('EXIT_FAILURE', 1);
+}
+
 /*
 |--------------------------------------------------------------------------
 | Hex Colors

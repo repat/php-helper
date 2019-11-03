@@ -761,6 +761,8 @@ contrast_color('#496379');
 * `WINDOWS`: windows
 * `LINUX`: linux
 * `BSD`: bsd
+* `EXIT_SUCCESS`: 0
+* `EXIT_FAILURE`: 1
 * `HEX_RED`: #ff0000
 * `HEX_GREEN`: #00ff00
 * `HEX_BLUE`: #0000ff
@@ -776,7 +778,7 @@ TLS_DHE_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_AES_256_CBC_SHA256, TLS_DH
 * MIT, see [LICENSE](https://github.com/repat/php-helper/blob/master/LICENSE)
 
 ## Version
-* Version 0.1.7
+* Version 0.1.8
 
 ## Contact
 #### repat
