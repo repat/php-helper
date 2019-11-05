@@ -7,7 +7,7 @@
 > ⚠️Some of these functions used to be in `repat/laravel-helper`, which now has this package as a dependency.
 
 Also have a look at
-* https://laravel.com/docs/5.8/helpers
+* https://laravel.com/docs/6.x/helpers
 * http://calebporzio.com/11-awesome-laravel-helper-functions
 * https://packagist.org/packages/illuminated/helper-functions
 * https://packagist.org/packages/laravel/helper-functions
@@ -770,6 +770,8 @@ contrast_color('#496379');
 * `HEX_BLACK`: #000000
 * `WEAK_CIPHERS` : [
 TLS_DHE_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_AES_256_CBC_SHA256, TLS_DHE_RSA_WITH_AES_256_CBC_SHA, TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA, TLS_DHE_RSA_WITH_CAMELLIA_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_CBC_SHA256, TLS_DHE_RSA_WITH_AES_128_CBC_SHA, TLS_DHE_RSA_WITH_AES_128_GCM_SHA256, TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA, SSL_DHE_RSA_WITH_AES_128_CBC_SHA, SSL_DHE_RSA_WITH_AES_256_CBC_SHA, SSL_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA, SSL_DHE_RSA_WITH_CAMELLIA_128_CBC_SHA, SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA]
+* `INET_ADDRSTRLEN`: 16
+* `INET6_ADDRSTRLEN`: 46
 
 ## Contributors
 * https://github.com/bertholf
@@ -778,7 +780,7 @@ TLS_DHE_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_AES_256_CBC_SHA256, TLS_DH
 * MIT, see [LICENSE](https://github.com/repat/php-helper/blob/master/LICENSE)
 
 ## Version
-* Version 0.1.8
+* Version 0.1.9
 
 ## Contact
 #### repat

@@ -152,6 +152,22 @@ if (! defined('WEAK_CIPHERS')) {
     ]);
 }
 
+if (! defined('INET_ADDRSTRLEN')) {
+    /**
+     * Length of the string form for IP
+     * @var int
+     */
+    define('INET_ADDRSTRLEN', 16);
+}
+
+if (! defined('INET6_ADDRSTRLEN')) {
+    /**
+     * Length of the string form for IPv6
+     * @var int
+     */
+    define('INET6_ADDRSTRLEN', 46);
+}
+
 /*
 |--------------------------------------------------------------------------
 | Regex
