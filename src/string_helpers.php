@@ -290,3 +290,18 @@ if (! function_exists('str_count_lower')) {
         return strlen(preg_replace('/[^a-z]+/', '', $string));
     }
 }
+
+if (! function_exists('str_insert_bindings')) {
+    /**
+     * Inserts bindings into SQL query
+     *
+     * @param  string $sql
+     * @param array $bindings
+     * @return string
+     */
+    function str_insert_bindings(string $sql, array $bindings) : string
+    {
+        $querySql = str_replace(['?'], ['\'%s\''], $sql);
+        return vsprintf($querySql, $bindings);
+    }
+}

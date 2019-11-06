@@ -652,6 +652,14 @@ str_count_lower('FOOBAR');
 // returns: 0
 ```
 
+#### `str_insert_bindings($sql, $bindings)`
+Inserts bindings for `?` characters in the SQL string. See also `insert_bindings()` of [`repat/laravel-helper`](https://packagist.org/packages/repat/laravel-helper).
+
+```php
+str_insert_bindings('SELECT * FROM `table` WHERE id = ?', [42]);
+// returns: SELECT * FROM `table` WHERE id = '42'
+```
+
 ##### Wordpress
 These functions were pulled in from the [Open Source](https://en.wikipedia.org/wiki/Open-source_model) [Content Management System](https://en.wikipedia.org/wiki/Content_management_system) [Wordpress](https://wordpress.org), released under the [GPL 2](https://en.wikipedia.org/wiki/GNU_General_Public_License) (or later).
 
@@ -780,7 +788,7 @@ TLS_DHE_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_AES_256_CBC_SHA256, TLS_DH
 * MIT, see [LICENSE](https://github.com/repat/php-helper/blob/master/LICENSE)
 
 ## Version
-* Version 0.1.9
+* Version 0.1.10
 
 ## Contact
 #### repat
