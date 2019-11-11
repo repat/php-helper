@@ -10,6 +10,10 @@ if (! function_exists('str_icontains')) {
      */
     function str_icontains(string $haystack, string $needle): bool
     {
+        if (empty($needle)) {
+            return false;
+        }
+        
         return (strpos(strtolower($haystack), strtolower($needle)) !== false);
     }
 }
