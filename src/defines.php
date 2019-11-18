@@ -214,6 +214,14 @@ if (! defined('REGEX_NUMBERS')) {
     define('REGEX_NUMBERS', '/([0-9])/');
 }
 
+if (! defined('REGEX_NEWLINES')) {
+    /**
+     * Any kind of newline (`\r`, `\n`, `\r\n`)
+     * @var string
+     */
+    define('REGEX_NEWLINES', '/\n|\r\n?/');
+}
+
 /*
 |--------------------------------------------------------------------------
 | Operating Systems

@@ -813,6 +813,7 @@ contrast_color('#496379');
 * `REGEX_UPPERCASE_ASCII`: (A-Z)
 * `REGEX_LOWERCASE_ASCII`: (a-z)
 * `REGEX_NUMBERS`: (0-9)
+* `REGEX_NEWLINES`: \n|\r\n?
 * `MACOS`: macos
 * `WINDOWS`: windows
 * `LINUX`: linux
