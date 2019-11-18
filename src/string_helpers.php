@@ -13,7 +13,7 @@ if (! function_exists('str_icontains')) {
         if (empty($needle)) {
             return false;
         }
-        
+
         return (strpos(strtolower($haystack), strtolower($needle)) !== false);
     }
 }
@@ -307,5 +307,44 @@ if (! function_exists('str_insert_bindings')) {
     {
         $querySql = str_replace(['?'], ['\'%s\''], $sql);
         return vsprintf($querySql, $bindings);
+    }
+}
+
+if (! function_exists('contains_uppercase')) {
+    /**
+     * If string contains uppercase ASCII characters
+     *
+     * @param  string $string
+     * @return bool
+     */
+    function contains_uppercase(string $string) : bool
+    {
+        return (bool) preg_match_all(REGEX_UPPERCASE_ASCII, $string);
+    }
+}
+
+if (! function_exists('contains_lowercase')) {
+    /**
+     * If string contains lowercase ASCII characters
+     *
+     * @param  string $string
+     * @return bool
+     */
+    function contains_lowercase(string $string) : bool
+    {
+        return (bool) preg_match_all(REGEX_LOWERCASE_ASCII, $string);
+    }
+}
+
+if (! function_exists('contains_numbers')) {
+    /**
+     * If string contains numbers
+     *
+     * @param  mixed $string
+     * @return bool
+     */
+    function contains_numbers($string) : bool
+    {
+        return (bool) preg_match_all(REGEX_NUMBERS, strval($string));
     }
 }

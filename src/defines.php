@@ -190,6 +190,30 @@ if (! defined('REGEX_FIRST_RESULT_KEY')) {
     define('REGEX_FIRST_RESULT_KEY', 1);
 }
 
+if (! defined('REGEX_UPPERCASE_ASCII')) {
+    /**
+     * Uppercase ASCII characters
+     * @var string
+     */
+    define('REGEX_UPPERCASE_ASCII', '/([A-Z])/');
+}
+
+if (! defined('REGEX_LOWERCASE_ASCII')) {
+    /**
+     * Lowercase ASCII characters
+     * @var string
+     */
+    define('REGEX_LOWERCASE_ASCII', '/([a-z])/');
+}
+
+if (! defined('REGEX_NUMBERS')) {
+    /**
+     * Numbers
+     * @var string
+     */
+    define('REGEX_NUMBERS', '/([0-9])/');
+}
+
 /*
 |--------------------------------------------------------------------------
 | Operating Systems

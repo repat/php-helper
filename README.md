@@ -660,6 +660,51 @@ str_insert_bindings('SELECT * FROM `table` WHERE id = ?', [42]);
 // returns: SELECT * FROM `table` WHERE id = '42'
 ```
 
+#### `contains_uppercase($string)`
+If the given string contains at least one uppercase ASCII character.
+
+```php
+contains_uppercase('Foobar');
+// returns: true
+
+contains_uppercase('foobar');
+// returns: false
+
+contains_uppercase('FOOBAR');
+// returns: true
+```
+
+#### `contains_lowercase($string)`
+If the given string contains at least one lowercase ASCII character.
+
+```php
+contains_lowercase('Foobar');
+// returns: true
+
+contains_lowercase('foobar');
+// returns: true
+
+contains_lowercase('FOOBAR');
+// returns: false
+```
+
+#### `contains_numbers($string)`
+If the given string (or number) contains at least one number.
+
+```php
+contains_numbers('Foobar');
+// returns: false
+
+contains_numbers('Foobar42');
+// returns: true
+
+contains_numbers('42');
+// returns: true
+
+contains_numbers(42); // uses strval()
+// returns: true
+```
+
 ##### Wordpress
 These functions were pulled in from the [Open Source](https://en.wikipedia.org/wiki/Open-source_model) [Content Management System](https://en.wikipedia.org/wiki/Content_management_system) [Wordpress](https://wordpress.org), released under the [GPL 2](https://en.wikipedia.org/wiki/GNU_General_Public_License) (or later).
 
@@ -765,6 +810,9 @@ contrast_color('#496379');
 * `HTTP_VERBS`: [get, head, post, connect, delete, options, put, trace, patch]
 * `REGEX_WORD_BOUNDARY`: \\b
 * `REGEX_FIRST_RESULT_KEY`: 1
+* `REGEX_UPPERCASE_ASCII`: (A-Z)
+* `REGEX_LOWERCASE_ASCII`: (a-z)
+* `REGEX_NUMBERS`: (0-9)
 * `MACOS`: macos
 * `WINDOWS`: windows
 * `LINUX`: linux
@@ -788,7 +836,7 @@ TLS_DHE_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_AES_256_CBC_SHA256, TLS_DH
 * MIT, see [LICENSE](https://github.com/repat/php-helper/blob/master/LICENSE)
 
 ## Version
-* Version 0.1.11
+* Version 0.1.12
 
 ## Contact
 #### repat
