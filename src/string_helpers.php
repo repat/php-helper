@@ -62,7 +62,7 @@ if (! function_exists('str_bytes')) {
          * escaping with a slash or encoding to UTF-8 where necessary
          */
         for ($c = 0; $c < $strlen_var; ++$c) {
-            $ord_var_c = ord($str{$c});
+            $ord_var_c = ord($str[$c]);
             switch (true) {
                 case (($ord_var_c >= 0x20) && ($ord_var_c <= 0x7F)):
                     // characters U-00000000 - U-0000007F (same as ASCII)

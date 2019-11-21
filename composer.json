@@ -4,7 +4,7 @@
     "keywords": ["php", "helper", "files", "array", "database", "strings", "date"],
     "homepage": "https://repat.de",
     "license": "MIT",
-    "version" : "0.1.12",
+    "version" : "0.1.13",
     "authors": [
         {"name": "repat", "email": "repat@repat.de"}
     ],
