@@ -11,7 +11,7 @@ if (!function_exists('markdown2html')
     function markdown2html(string $markdown) : string
     {
         $converter = new \League\CommonMark\CommonMarkConverter;
-        return $converter->convertToHtml($markdown);
+        return strip_tags($converter->convertToHtml($markdown), 'p');
     }
 }
 
