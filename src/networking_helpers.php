@@ -1,6 +1,6 @@
 <?php
 
-if (!function_exists('http_status_code')) {
+if (! function_exists('http_status_code')) {
     /**
      * Get only HTTP(S) status code for a URL
      *
@@ -14,7 +14,7 @@ if (!function_exists('http_status_code')) {
         curl_setopt($handle, CURLOPT_FOLLOWLOCATION, $follow);
         curl_setopt($handle, CURLOPT_HEADER, true);
         curl_setopt($handle, CURLOPT_NOBODY, true);
-        if (!empty($userAgent)) {
+        if (! empty($userAgent)) {
             curl_setopt($handle, CURLOPT_USERAGENT, $userAgent);
         }
         $response = curl_exec($handle);
@@ -22,7 +22,7 @@ if (!function_exists('http_status_code')) {
     }
 }
 
-if (!function_exists('domain_slug')) {
+if (! function_exists('domain_slug')) {
     /**
      * Gets hostname for full URL in a slug-friendly way
      *
@@ -35,14 +35,14 @@ if (!function_exists('domain_slug')) {
         $url = trim($domain, '/');
 
         // if scheme not included, prepend it
-        if (!preg_match('#^http(s)?://#', $url)) {
+        if (! preg_match('#^http(s)?://#', $url)) {
             $url = 'http://' . $url;
         }
 
         $urlParts = parse_url($url);
 
         // If parsing worked, str_slug() on host part of URL
-        if ($urlParts !== false && !empty($urlParts)) {
+        if ($urlParts !== false && ! empty($urlParts)) {
             $domain = preg_replace('/^www\./', '', $urlParts['host']); // Remove www
 
             return str_slug($domain);
@@ -53,7 +53,7 @@ if (!function_exists('domain_slug')) {
     }
 }
 
-if (!function_exists('scrub_url')) {
+if (! function_exists('scrub_url')) {
     /**
      * Removes protocols, www and trailing slashes from URL
      *
@@ -71,7 +71,7 @@ if (!function_exists('scrub_url')) {
     }
 }
 
-if (!function_exists('parse_signed_request')) {
+if (! function_exists('parse_signed_request')) {
     /**
      * Parses a sha256 signed request JSON into array
      * Source: https://developers.facebook.com/docs/apps/delete-data
@@ -100,7 +100,7 @@ if (!function_exists('parse_signed_request')) {
     }
 }
 
-if (!function_exists('is_public_ip')) {
+if (! function_exists('is_public_ip')) {
     /**
      * Is it a public IPv4 or IPv6 address (not private, not reserved)
      *
@@ -114,7 +114,7 @@ if (!function_exists('is_public_ip')) {
     }
 }
 
-if (!function_exists('gethostbyname6')) {
+if (! function_exists('gethostbyname6')) {
     /**
      * Use AAAA DNS Record to get (first) IPv6 address for given domain
      *
@@ -136,7 +136,7 @@ if (!function_exists('gethostbyname6')) {
     }
 }
 
-if (!function_exists('final_redirect_target')) {
+if (! function_exists('final_redirect_target')) {
     /**
      * Final redirect target URL or null
      *
@@ -152,7 +152,7 @@ if (!function_exists('final_redirect_target')) {
         curl_exec($ch);
         $target = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
         curl_close($ch);
-        if (!empty($target)) {
+        if (! empty($target)) {
             return $target;
         }
         return null;

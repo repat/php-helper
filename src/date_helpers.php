@@ -1,6 +1,6 @@
 <?php
 
-if (!function_exists('days_in_month')) {
+if (! function_exists('days_in_month')) {
     /**
      * How many days are in given month, defaults to current
      *
@@ -14,7 +14,7 @@ if (!function_exists('days_in_month')) {
     }
 }
 
-if (!function_exists('days_this_month')) {
+if (! function_exists('days_this_month')) {
     /**
      * How many days are in current month (28/29/30/31)
      *
@@ -26,7 +26,7 @@ if (!function_exists('days_this_month')) {
     }
 }
 
-if (!function_exists('days_next_month')) {
+if (! function_exists('days_next_month')) {
     /**
      * How many days are in next month (28/29/30/31)
      *
@@ -38,7 +38,7 @@ if (!function_exists('days_next_month')) {
     }
 }
 
-if (!function_exists('days_this_year')) {
+if (! function_exists('days_this_year')) {
     /**
      * How many days are in current year, depending on leap year
      *
@@ -51,7 +51,7 @@ if (!function_exists('days_this_year')) {
     }
 }
 
-if (!function_exists('days_left_in_month')) {
+if (! function_exists('days_left_in_month')) {
     /**
      * How many days are left in current month
      *
@@ -63,7 +63,7 @@ if (!function_exists('days_left_in_month')) {
     }
 }
 
-if (!function_exists('days_left_in_year')) {
+if (! function_exists('days_left_in_year')) {
     /**
      * How many days are left in current year
      *
@@ -75,7 +75,7 @@ if (!function_exists('days_left_in_year')) {
     }
 }
 
-if (!function_exists('timezone_list')) {
+if (! function_exists('timezone_list')) {
     /**
      * A list of timezones
      *
@@ -126,7 +126,7 @@ if (!function_exists('timezone_list')) {
     }
 }
 
-if (!function_exists('tomorrow')) {
+if (! function_exists('tomorrow')) {
     /**
      * Carbon instance of tomorrow, similar to `today()`
      *
@@ -138,7 +138,7 @@ if (!function_exists('tomorrow')) {
     }
 }
 
-if (!function_exists('yesterday')) {
+if (! function_exists('yesterday')) {
     /**
      * Carbon instance of yesterday, similar to `today()`
      *
@@ -150,7 +150,7 @@ if (!function_exists('yesterday')) {
     }
 }
 
-if (!function_exists('seconds2minutes')) {
+if (! function_exists('seconds2minutes')) {
     /**
      * Displays amount of given seconds in minutes like m:s
      *
@@ -171,7 +171,7 @@ if (!function_exists('seconds2minutes')) {
     }
 }
 
-if (!function_exists('diff_in_days')) {
+if (! function_exists('diff_in_days')) {
     /**
      * Difference in days
      *

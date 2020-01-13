@@ -1,6 +1,6 @@
 <?php
 
-if (!function_exists('linkify')) {
+if (! function_exists('linkify')) {
     /**
      * Turn all URLs in clickable links.
      *
@@ -62,7 +62,7 @@ if (!function_exists('linkify')) {
     }
 }
 
-if (!function_exists('embedded_video_url')) {
+if (! function_exists('embedded_video_url')) {
     /**
      * Returns the embeddable video URL for YouTube and Vimeo video links
      * @param  string $url
@@ -92,7 +92,7 @@ if (!function_exists('embedded_video_url')) {
     }
 }
 
-if (!function_exists('ul_li_unpack')) {
+if (! function_exists('ul_li_unpack')) {
     /**
      * Unpacks an array by recursively using `<ul>` and `<li>`
      *
@@ -113,7 +113,7 @@ if (!function_exists('ul_li_unpack')) {
     }
 }
 
-if (!function_exists('html_link')) {
+if (! function_exists('html_link')) {
     /**
      * Links/Form with specific HTTP Verb (WIP, undocumented)
      *
@@ -127,7 +127,7 @@ if (!function_exists('html_link')) {
     {
         $method = strtolower($method);
 
-        if (!in_array($method, HTTP_VERBS)) {
+        if (! in_array($method, HTTP_VERBS)) {
             return null;
         }
 
@@ -154,7 +154,7 @@ if (!function_exists('html_link')) {
     }
 }
 
-if (!function_exists('contrast_color')) {
+if (! function_exists('contrast_color')) {
     /**
      * Determines whether or not black or white would be the best
      * contrast color for a background color. Based on Luminosity Contrast Algo:

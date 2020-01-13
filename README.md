@@ -97,6 +97,17 @@ array_key_replace(['bar' => 'foo'], 'bar', 'bizz');
 // returns : ['bizz' => 'foo']
 ```
 
+#### `array_avg($array)`
+Calculates average (sum/amount) of values. Returns `null` if array is empty.
+
+```php
+array_avg([1, 2, 3]);
+// returns : 2
+
+array_avg([]);
+// returns : null
+```
+
 ### Date
 #### `days_in_month($month = null, $year = null)`
 Returns amount of days in given month or year. Defaults to current month and year.
@@ -837,7 +848,7 @@ TLS_DHE_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_AES_256_CBC_SHA256, TLS_DH
 * MIT, see [LICENSE](https://github.com/repat/php-helper/blob/master/LICENSE)
 
 ## Version
-* Version 0.1.14
+* Version 0.1.15
 
 ## Contact
 #### repat

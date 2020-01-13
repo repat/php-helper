@@ -1,6 +1,6 @@
 <?php
 
-if (!function_exists('human_filesize')) {
+if (! function_exists('human_filesize')) {
     /**
      * Returns filesize of a file in a human readable (kilo, mega, giga etc)
      * form with 2 (or specified) decimals
@@ -17,7 +17,7 @@ if (!function_exists('human_filesize')) {
     }
 }
 
-if (!function_exists('generate_password')) {
+if (! function_exists('generate_password')) {
     /**
      * Syntactic Sugar for `str_random()`, default length is 15 characters
      *
@@ -30,7 +30,7 @@ if (!function_exists('generate_password')) {
     }
 }
 
-if (!function_exists('zenith')) {
+if (! function_exists('zenith')) {
     /**
      * Used for calculating when the sun sets
      *
@@ -55,7 +55,7 @@ if (!function_exists('zenith')) {
     }
 }
 
-if (!function_exists('permutations')) {
+if (! function_exists('permutations')) {
     /**
      * Returns a generator of all permutations of given array
 
@@ -120,14 +120,14 @@ if (!function_exists('permutations')) {
                     break;
                 }
             }
-            if (!$exitEarly) {
+            if (! $exitEarly) {
                 break; // Outer while loop
             }
         }
     }
 }
 
-if (!function_exists('auto_cast')) {
+if (! function_exists('auto_cast')) {
     /**
      * Will automatically cast strings into float/int or bool values
      *
@@ -152,7 +152,7 @@ if (!function_exists('auto_cast')) {
     }
 }
 
-if (!function_exists('operating_system')) {
+if (! function_exists('operating_system')) {
     /**
      * Returns Operating System, see constants in `defines.php`
      *
@@ -174,7 +174,7 @@ if (!function_exists('operating_system')) {
     }
 }
 
-if (!function_exists('toggle')) {
+if (! function_exists('toggle')) {
     /**
      * Returns opposite of input
      *
@@ -187,7 +187,7 @@ if (!function_exists('toggle')) {
     }
 }
 
-if (!function_exists('wikipedia')) {
+if (! function_exists('wikipedia')) {
     /**
      * Link to Wikipedia, cleaning up Lemma
      *

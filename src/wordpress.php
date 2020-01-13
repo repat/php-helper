@@ -1,6 +1,6 @@
 <?php
 
-if (!function_exists('mbstring_binary_safe_encoding')) {
+if (! function_exists('mbstring_binary_safe_encoding')) {
     /**
      * Set the mbstring internal encoding to a binary safe encoding when func_overload
      * is enabled.
@@ -49,7 +49,7 @@ if (!function_exists('mbstring_binary_safe_encoding')) {
     }
 }
 
-if (!function_exists('reset_mbstring_encoding')) {
+if (! function_exists('reset_mbstring_encoding')) {
     /**
      * Reset the mbstring internal encoding to a users previously set encoding.
      *
@@ -64,7 +64,7 @@ if (!function_exists('reset_mbstring_encoding')) {
     }
 }
 
-if (!function_exists('seems_utf8')) {
+if (! function_exists('seems_utf8')) {
     /**
      * Checks to see if a string is utf8 encoded.
      *
@@ -109,7 +109,7 @@ if (!function_exists('seems_utf8')) {
     }
 }
 
-if (!function_exists('remove_accents')) {
+if (! function_exists('remove_accents')) {
     /**
      * Converts all accent characters to ASCII characters.
      *
@@ -495,7 +495,7 @@ if (!function_exists('remove_accents')) {
      */
     function remove_accents(string $string) : string
     {
-        if (!preg_match('/[\x80-\xff]/', $string)) {
+        if (! preg_match('/[\x80-\xff]/', $string)) {
             return $string;
         }
 

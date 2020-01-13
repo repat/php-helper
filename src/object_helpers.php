@@ -1,6 +1,6 @@
 <?php
 
-if (!function_exists('object2array')) {
+if (! function_exists('object2array')) {
     /**
      * Transforms an object into an array
      *
@@ -20,7 +20,7 @@ if (!function_exists('object2array')) {
 }
 
 
-if (!function_exists('filepath2fqcn')) {
+if (! function_exists('filepath2fqcn')) {
     /**
      * Filepath to Fully Qualified Class Name
      *
@@ -30,7 +30,7 @@ if (!function_exists('filepath2fqcn')) {
      */
     function filepath2fqcn(string $filepath, string $prefix = '') : string
     {
-        if (!empty($prefix)) {
+        if (! empty($prefix)) {
             $prefix = str_finish($prefix, '/');
         }
         return ucfirst(str_replace([$prefix, '/', '.php'], ['', '\\', ''], $filepath));

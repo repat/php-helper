@@ -1,6 +1,6 @@
 <?php
 
-if (!function_exists('markdown2html')
+if (! function_exists('markdown2html')
 && class_exists(\League\CommonMark\CommonMarkConverter::class)) {
     /**
      * Converts Markdown text into HTML code with `league/commonmark`
@@ -15,7 +15,7 @@ if (!function_exists('markdown2html')
     }
 }
 
-if (!function_exists('domain') &&
+if (! function_exists('domain') &&
 class_exists(\LayerShifter\TLDExtract\Extract::class)) {
     /**
      * Gets domain without subdomain etc
@@ -29,7 +29,7 @@ class_exists(\LayerShifter\TLDExtract\Extract::class)) {
         $result = $extract->parse($url);
 
         // If domain parsing worked
-        if (!empty($result->getRegistrableDomain()) && $result->isValidDomain()) {
+        if (! empty($result->getRegistrableDomain()) && $result->isValidDomain()) {
             return $result->getRegistrableDomain();
         }
 

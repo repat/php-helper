@@ -1,6 +1,6 @@
 <?php
 
-if (!function_exists('array_equal')) {
+if (! function_exists('array_equal')) {
     /**
      * Determines if 2 arrays are equal based on the serialized string representation
      * modified version from http://php.net/manual/de/function.array-diff.php
@@ -27,7 +27,7 @@ if (!function_exists('array_equal')) {
     }
 }
 
-if (!function_exists('array_key2value')) {
+if (! function_exists('array_key2value')) {
     /**
      * Creates a new array with Key == Value
      * Syntactic sugar for `array_combine($array, $array);`
@@ -41,7 +41,7 @@ if (!function_exists('array_key2value')) {
     }
 }
 
-if (!function_exists('array_delete_value')) {
+if (! function_exists('array_delete_value')) {
     /**
      * Deletes all elements from `$array` that have value `$value`
      * Syntactic sugar for `array_diff($array, [$value])`
@@ -56,7 +56,7 @@ if (!function_exists('array_delete_value')) {
     }
 }
 
-if (!function_exists('contains_duplicates')) {
+if (! function_exists('contains_duplicates')) {
     /**
      * Check duplicate values in given array
      *
@@ -69,7 +69,7 @@ if (!function_exists('contains_duplicates')) {
     }
 }
 
-if (!function_exists('array_change_keys')) {
+if (! function_exists('array_change_keys')) {
     /**
      * Exchanges keys in given array
      *
@@ -90,7 +90,7 @@ if (!function_exists('array_change_keys')) {
     }
 }
 
-if (!function_exists('array_key_replace')) {
+if (! function_exists('array_key_replace')) {
     /**
      * Changes old key to new key.
      * Only for one dimensional arrays.
@@ -105,5 +105,22 @@ if (!function_exists('array_key_replace')) {
         $array[$newKey] = $array[$oldKey];
         unset($array[$oldKey]);
         return $array;
+    }
+}
+
+if (! function_exists('array_avg')) {
+    /**
+     * Calculates average of array values. If array is empty, returns `null`
+     *
+     * @param  array  $array
+     * @return null|float
+     */
+    function array_avg(array $array) : ?float
+    {
+        $array = array_filter($array);
+        if (count($array)) {
+            return floatval(array_sum($array)/count($array));
+        }
+        return null;
     }
 }
