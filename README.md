@@ -748,9 +748,9 @@ markdown2html('# Header');
 ```
 
 #### `domain($url)`
-Uses [layershifter/tld-extract](https://github.com/layershifter/tld-extract) to return the domain only from a URL, removing protocol, subdomain and path.
+Uses [jeremykendall/php-domain-parser](https://github.com/jeremykendall/php-domain-parser) to return the domain only from a URL, removing protocol, subdomain and path.
 
-* `$ composer require layershifter/tld-extract`
+* `$ composer require jeremykendall/php-domain-parser`
 
 ```php
 domain('https://repat.de/about?foo=bar');

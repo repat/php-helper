@@ -15,8 +15,10 @@ if (! function_exists('markdown2html')
     }
 }
 
-if (! function_exists('domain') &&
-class_exists(\LayerShifter\TLDExtract\Extract::class)) {
+if (! function_exists('domain')
+    && class_exists(\Pdp\Cache::class)
+    && class_exists(\Pdp\CurlHttpClient::class)
+    && class_exists(\Pdp\Manager::class)) {
     /**
      * Gets domain without subdomain etc
      *
@@ -25,11 +27,17 @@ class_exists(\LayerShifter\TLDExtract\Extract::class)) {
      */
     function domain(string $url) : ?string
     {
-        $extract = new \LayerShifter\TLDExtract\Extract();
-        $result = $extract->parse($url);
+        $manager = new \Pdp\Manager(new \Pdp\Cache(), new \Pdp\CurlHttpClient());
+        $rules = $manager->getRules();
+
+        try {
+            $result = $rules->resolve($url);
+        } catch (\Exception $e) {
+            return null;
+        }
 
         // If domain parsing worked
-        if (! empty($result->getRegistrableDomain()) && $result->isValidDomain()) {
+        if (! empty($result->getRegistrableDomain()) && $result->isICANN()) {
             return $result->getRegistrableDomain();
         }
 
