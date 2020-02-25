@@ -388,6 +388,20 @@ wikipedia('Pariz', 'fr', '#')
 // returns: #
 ```
 
+#### `function_location($functionName)`
+Uses [Reflection](https://www.php.net/manual/en/book.reflection.php) to return the location where the function was defined or `null` if function doesn't exist. Note that PHPs internal functions return a an empty string.
+
+```php
+function_location('wikipedia')
+// returns: /folder/on/drive/php-helper/src/misc_helper.php:198
+
+function_location('function_does_not_exist')
+// returns: null
+
+function_location('array_map')
+// returns: '' (empty string)
+```
+
 ### Networking
 #### `scrub_url($url)`
 Removes the protocol, www and trailing slashes from a URL. You can then e.g. test HTTP vs. HTTPS connections.
@@ -848,7 +862,7 @@ TLS_DHE_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_AES_256_CBC_SHA256, TLS_DH
 * MIT, see [LICENSE](https://github.com/repat/php-helper/blob/master/LICENSE)
 
 ## Version
-* Version 0.1.16
+* Version 0.1.17
 
 ## Contact
 #### repat

@@ -217,3 +217,25 @@ if (! function_exists('wikipedia')) {
         return $url;
     }
 }
+
+if (! function_exists('function_location')) {
+    /**
+     * Uses Reflection to return file path where
+     * the function was defined or `null`
+     *
+     * Source: https://stackoverflow.com/a/2222404
+     *
+     * @param  string $functionName
+     * @return string|null
+     */
+    function function_location(string $functionName) : ?string
+    {
+        try {
+            $reflFunc = new \ReflectionFunction($functionName);
+        } catch (\ReflectionException $e) {
+            return null;
+        }
+
+        return trim($reflFunc->getFileName() . ':' . $reflFunc->getStartLine(), ':');
+    }
+}
