@@ -1,27 +1,33 @@
 # php-helper
+
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/repat/php-helper.svg?style=flat-square)](https://packagist.org/packages/repat/php-helper)
 [![Total Downloads](https://img.shields.io/packagist/dt/repat/php-helper.svg?style=flat-square)](https://packagist.org/packages/repat/php-helper)
 
 **php-helper** is a package full of helper functions I found useful when developing applications in PHP. All functions are wrapped with a `functions_exists()` in case of conflicts.
 
-> ⚠️Some of these functions used to be in `repat/laravel-helper`, which now has this package as a dependency.
+> ⚠️ Some of these functions used to be in `repat/laravel-helper`, which now has this package as a dependency.
 
 Also have a look at
-* https://laravel.com/docs/6.x/helpers
-* http://calebporzio.com/11-awesome-laravel-helper-functions
-* https://packagist.org/packages/illuminated/helper-functions
-* https://packagist.org/packages/laravel/helper-functions
+
+* [https://laravel.com/docs/8.x/helpers](https://laravel.com/docs/8.x/helpers)
+* [http://calebporzio.com/11-awesome-laravel-helper-functions](http://calebporzio.com/11-awesome-laravel-helper-functions)
+* [https://packagist.org/packages/illuminated/helper-functions](https://packagist.org/packages/illuminated/helper-functions)
+* [https://packagist.org/packages/laravel/helper-functions](https://packagist.org/packages/laravel/helper-functions)
 
 Ideas what should go in here? Write a pull request or email!
 
 ## Installation
+
 `$ composer require repat/php-helper`
 
 ## Documentation
 
 ### Array
+
 #### `array_equal($arr1, $arr2)`
+
 Determines if 2 arrays have the same items, independent of order.
+
 ```php
 $arr1 = [1, 2, 3];
 $arr2 = [3, 2, 1];
@@ -35,7 +41,9 @@ array_equal($arr1, $arr3);
 ```
 
 #### `array_key2value($array)`
+
 Returns an array where key == value. Syntactic sugar for  `array_combine($array, $array);`
+
 ```php
 $array = [1, 3, 5];
 
@@ -44,6 +52,7 @@ print_r(array_key2value($array));
 ```
 
 #### `array_delete_value($array, $value)`
+
 Deletes all elements from `$array` that have value `$value`. Essentially syntactic sugar for `array_diff()`.
 
 ```php
@@ -54,6 +63,7 @@ print_r(array_delete_value($array, 'foo'));
 ```
 
 #### `contains_duplicates($array)`
+
 Checks if there are duplicates in given array.
 
 ```php
@@ -64,6 +74,7 @@ contains_duplicates([1, 2]);
 ```
 
 #### `array_change_keys($array, $keys)`
+
 Changes the keys recursively for an associative array. The second parameter is an array with the old key (of `$array`) as the key and the new key as the value.
 
 ```php
@@ -90,6 +101,7 @@ array_change_keys($array, $keys);
 ```
 
 #### `array_key_replace($array, $oldKey, $newKey)`
+
 Similar to `array_change_keys()` but it only works for one-dimensional arrays.
 
 ```php
@@ -98,6 +110,7 @@ array_key_replace(['bar' => 'foo'], 'bar', 'bizz');
 ```
 
 #### `array_avg($array)`
+
 Calculates average (sum/amount) of values. Returns `null` if array is empty.
 
 ```php
@@ -109,7 +122,9 @@ array_avg([]);
 ```
 
 ### Date
+
 #### `days_in_month($month = null, $year = null)`
+
 Returns amount of days in given month or year. Defaults to current month and year.
 
 ```php
@@ -124,6 +139,7 @@ days_in_month($feb = 2, $year = 2020);
 ```
 
 #### `days_this_month()`
+
 Returns amount of days of the current month.
 
 ```php
@@ -132,6 +148,7 @@ days_this_month();
 ```
 
 #### `days_next_month()`
+
 Returns amount of days of the next month.
 
 ```php
@@ -140,6 +157,7 @@ days_next_month();
 ```
 
 #### `days_this_year()`
+
 Returns amount of days of the current year.
 
 ```php
@@ -148,6 +166,7 @@ days_this_year();
 ```
 
 #### `days_left_in_month()`
+
 Returns amount of days left in current month.
 
 ```php
@@ -156,6 +175,7 @@ days_left_in_month();
 ```
 
 #### `days_left_in_year()`
+
 Returns amount of days left in current year.
 
 ```php
@@ -164,6 +184,7 @@ days_left_in_year();
 ```
 
 #### `timezone_list()`
+
 Returns a list of all timezones.
 
 ```php
@@ -181,6 +202,7 @@ timezone_list();
 ```
 
 #### `tomorrow()`
+
 Similar to `today()` or `now()`, this function returns a Carbon instance for tomorrow.
 
 ```php
@@ -191,6 +213,7 @@ tomorrow();
 ```
 
 #### `yesterday()`
+
 Similar to `today()` or `now()`, this function returns a Carbon instance for yesterday.
 
 ```php
@@ -201,6 +224,7 @@ yesterday();
 ```
 
 #### `seconds2minutes($seconds)`
+
 Returns `i:s` string with 60+ minutes instead of showing the hours as well.
 
 ```php
@@ -214,8 +238,8 @@ seconds2minutes(4223);
 // returns: 70:23
 ```
 
-
 #### `diff_in_days($start, $end)`
+
 Uses Carbons `diffInDays()` and `parse()` methods to return the difference in days.
 
 ```php
@@ -227,7 +251,9 @@ diff_in_days(today(), yesterday());
 ```
 
 ### Object
+
 #### `object2array($object)`
+
 Array representation of an object, e.g. an Eloquent Model.
 
 ```php
@@ -247,6 +273,7 @@ object2array(User::first());
 ```
 
 #### `filepath2fqcn($filepath, $prefix = '')`
+
 Will turn a filepath into a Fully Qualified Class Name.
 
 ```php
@@ -264,7 +291,9 @@ filepath2fqcn('/Users/john/code/app/Models/User.php');
 ```
 
 ### Misc
+
 #### `toggle($switch)`
+
 If given `true`, returns `false` and vice-versa.
 
 ```php
@@ -276,6 +305,7 @@ toggle(true);
 ```
 
 #### `generate_password($size = 15)`
+
 Returns a random password. Syntactic sugar for `str_random()`.
 
 ```php
@@ -284,6 +314,7 @@ generate_password();
 ```
 
 #### `auto_cast($value)`
+
 Returns the value with the right type so e.g. you can compare type safe with `===`.
 
 ```php
@@ -296,6 +327,7 @@ gettype(auto_cast('true'));
 ```
 
 #### `human_filesize($size)`
+
 Returns a human readable form for given bytes. Goes up to [Yottabyte](https://en.wikipedia.org/wiki/Yottabyte).
 
 ```php
@@ -304,6 +336,7 @@ human_filesize(4223);
 ```
 
 #### `permutations($array)`
+
 Returns a generator with all possible permutations of given array values.
 
 Based on [eddiewoulds port](https://stackoverflow.com/a/43307800/2517690) port of [python code](https://docs.python.org/2/library/itertools.html#itertools.permutations).
@@ -347,6 +380,7 @@ iterator_to_array($gen)
 ```
 
 #### `zenith($type)`
+
 Wrapper around magic numbers for the [Zenith](https://en.wikipedia.org/wiki/Zenith). The types can be:
 
 * `astronomical`: 108.0
@@ -360,6 +394,7 @@ zenith('civil');
 ```
 
 #### `operating_system()`
+
 Returns on of the following constants (also see under constants):
 
 * `macos`
@@ -375,6 +410,7 @@ LINUX
 ```
 
 #### `wikipedia($lemma, $lang = 'en', $return = '')`
+
 Link URL to wikipedia for a certain language
 
 ```php
@@ -389,6 +425,7 @@ wikipedia('Pariz', 'fr', '#')
 ```
 
 #### `function_location($functionName)`
+
 Uses [Reflection](https://www.php.net/manual/en/book.reflection.php) to return the location where the function was defined or `null` if function doesn't exist. Note that PHPs internal functions return a an empty string.
 
 ```php
@@ -403,7 +440,9 @@ function_location('array_map')
 ```
 
 ### Networking
+
 #### `scrub_url($url)`
+
 Removes the protocol, www and trailing slashes from a URL. You can then e.g. test HTTP vs. HTTPS connections.
 
 ```php
@@ -415,6 +454,7 @@ scrub_url('https://blog.fefe.de/?ts=a262bcdf');
 ```
 
 #### `http_status_code($url, $follow = true, $userAgent = null)`
+
 Returns just the status code by sending an empty request with [curl](https://curl.haxx.se/). By default, it follows redirect so it will only return the last status code and not e.g. 301 Redirects. Disable following by setting the second parameter to `false`. Some sites require a User-Agent and then return another status code. A string can be passed to `$userAgent`.
 Requires `ext-curl`.
 
@@ -430,6 +470,7 @@ http_status_code('http://repat.de', false);
 ```
 
 #### `parse_signed_request($request, $clientSecret, $algo)`
+
 Parses a HMAC signed request. Copied from [Data Deletion Request Callback - Facebook for Developers](https://developers.facebook.com/docs/apps/delete-data). `$algo` defaults to `sha256`.
 
 ```php
@@ -438,6 +479,7 @@ parse_signed_request($requestString, env('FACEBOOK_CLIENT_SECRET'));
 ```
 
 #### `domain_slug($domain)`
+
 Validates a domain and creates a slug. Does not work for subdomains, see `sluggify_domain()` instead. Returns `null` on a parsing error.
 
 ```php
@@ -448,6 +490,7 @@ domain_slug('blogfefe.de')
 ```
 
 ##### `gethostbyname6($domain)`
+
 Returns a IPv6 address for given domain by using the DNS AAAA records. If none is found, the input domain is returned, much like `gethostbyname()` is doing for IPv4.
 
 ```php
@@ -461,6 +504,7 @@ gethostbyname6('example.com')
 ```
 
 ##### `is_public_ip($ip)`
+
 Returns if given IP is a public IPv4 or IPv6 address (vs. private or reserved)
 
 ```php
@@ -488,6 +532,7 @@ is_public_ip($ipv6);
 ```
 
 ##### `final_redirect_target($url)`
+
 Follows all 301/302 redirects and returns the URL at the end of the chain, or `null`.
 
 ```php
@@ -496,7 +541,9 @@ final_redirect_target('http://google.com');
 ```
 
 ### String
-#### `str_icontains($haystack, $needle)`    
+
+#### `str_icontains($haystack, $needle)`
+
 Similar to [Str::contains()](https://laravel.com/docs/5.7/helpers#method-str-contains) but case _insensitive_.
 
 ```php
@@ -514,6 +561,7 @@ str_icontains('foobar', 'test');
 ```
 
 #### `to_ascii($string)`
+
 Removes all non [ASCII](https://en.wikipedia.org/wiki/ASCII) characters and returns the rest.
 
 ```php
@@ -522,6 +570,7 @@ to_ascii('René');
 ```
 
 #### `hyphen2_($string)`
+
 Replaces all hyphen ("-") characters with underscore ("\_")
 
 ```php
@@ -530,6 +579,7 @@ hyphen2_('foo-bar');
 ```
 
 #### `_2hypen($string)`
+
 Replaces all underscore ("\_") characters with hyphen ("-")
 
 ```php
@@ -538,6 +588,7 @@ _2hypen('foo_bar');
 ```
 
 #### `str_replace_once($search, $replace, $string)`
+
 Same signature as `str_replace()`, but as name suggests, replaces only the first occurrence of `$search`.
 
 ```php
@@ -546,6 +597,7 @@ str_replace_once('foo', 'bar', 'foofoo');
 ```
 
 #### `title_case_wo_underscore($string)`
+
 [Title Case](https://en.wikipedia.org/wiki/Letter_case#Title_case) but without underscores.
 
 ```php
@@ -558,6 +610,7 @@ title_case_wo_underscore('foo_bar');
 ```
 
 #### `lorem_ipsum()`
+
 Returns an example of the [Lorem Ipsum](https://en.wikipedia.org/wiki/Lorem_ipsum) placeholder text.
 
 ```php
@@ -567,6 +620,7 @@ lorem_ipsum();
 ```
 
 #### `sluggify_domain($domain)`
+
 Returns a slug version of the domain by exchanging full stops with underscores. `str_slug()` does not work with subdomains, as it removes full stops completely.
 
 ```php
@@ -582,6 +636,7 @@ str_slug('blogfefe.de');
 ```
 
 #### `str_remove($string, $remove)`
+
 Removes given string(s), numbers or array of strings. Syntactic sugar for `str_replace($remove, '', $string)`.
 
 ```php
@@ -594,6 +649,7 @@ str_remove('foobar42', 42);
 ```
 
 #### `str_bytes($string)`
+
 Returns the amount of bytes in a string.
 
 ```php
@@ -604,6 +660,7 @@ str_bytes('fooßar');
 ```
 
 #### `regex_list($array)`
+
 Creates a string with regex for an OR separated list.
 
 ```php
@@ -612,6 +669,7 @@ regex_list(['foo', 'bar', '42'])
 ```
 
 #### `base64_url_decode($url)`
+
 Decodes a base64-encoded URL. Copied from [Data Deletion Request Callback - Facebook for Developers](https://developers.facebook.com/docs/apps/delete-data)
 
 ```php
@@ -620,6 +678,7 @@ base64_url_decode('aHR0cHM6Ly9yZXBhdC5kZQ==');
 ```
 
 #### `str_right($string, $until)`
+
 Syntactic sugar for [`str_after`](https://laravel.com/docs/5.8/helpers#method-str-after).
 
 ```php
@@ -628,6 +687,7 @@ str_right('https://vimeo.com/165053513', '/');
 ```
 
 #### `str_left($string, $before)`
+
 Syntactic sugar for [`str_before`](https://laravel.com/docs/5.8/helpers#method-str-before).
 
 ```php
@@ -636,6 +696,7 @@ str_left('https://vimeo.com/165053513', '165053513');
 ```
 
 #### `normalize_nl($string)`
+
 Normalizes all new lines characters (`\r`, `\n`, `\r\n`) to the UNIX newline `\n`.
 
 ```php
@@ -650,6 +711,7 @@ normalize_nl('foobar\n'); // *nix
 ```
 
 #### `str_count_upper($string)`
+
 Counts upper case characters in a string. See also `str_count_lower()`.
 
 ```php
@@ -664,6 +726,7 @@ str_count_upper('FOOBAR');
 ```
 
 #### `str_count_lower($string)`
+
 Counts lower case characters in a string. See also `str_count_upper()`.
 
 ```php
@@ -678,6 +741,7 @@ str_count_lower('FOOBAR');
 ```
 
 #### `str_insert_bindings($sql, $bindings)`
+
 Inserts bindings for `?` characters in the SQL string. See also `insert_bindings()` of [`repat/laravel-helper`](https://packagist.org/packages/repat/laravel-helper).
 
 ```php
@@ -686,6 +750,7 @@ str_insert_bindings('SELECT * FROM `table` WHERE id = ?', [42]);
 ```
 
 #### `contains_uppercase($string)`
+
 If the given string contains at least one uppercase ASCII character.
 
 ```php
@@ -700,6 +765,7 @@ contains_uppercase('FOOBAR');
 ```
 
 #### `contains_lowercase($string)`
+
 If the given string contains at least one lowercase ASCII character.
 
 ```php
@@ -714,6 +780,7 @@ contains_lowercase('FOOBAR');
 ```
 
 #### `contains_numbers($string)`
+
 If the given string (or number) contains at least one number.
 
 ```php
@@ -730,7 +797,23 @@ contains_numbers(42); // uses strval()
 // returns: true
 ```
 
+#### `country_name($iso, $locale)`
+
+Converts [ISO Code 3166-1 alpha-2](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) `$iso` code into the full country name. Basically syntactic sugar for [`locale_get_display_region()`](https://www.php.net/manual/en/locale.getdisplayregion.php). Optionally accepts `$locale` to print the country name in a given language. `XK` will give you [Kosovo](https://en.wikipedia.org/wiki/International_recognition_of_Kosovo).
+
+```php
+country_name('nz');
+// returns: New Zealand
+
+country_name('de');
+// returns: Germany (Germany in English)
+
+country_name('de', 'de');
+// returns: Deutschland (Germany in German)
+```
+
 ##### Wordpress
+
 These functions were pulled in from the [Open Source](https://en.wikipedia.org/wiki/Open-source_model) [Content Management System](https://en.wikipedia.org/wiki/Content_management_system) [Wordpress](https://wordpress.org), released under the [GPL 2](https://en.wikipedia.org/wiki/GNU_General_Public_License) (or later).
 
 * `mbstring_binary_safe_encoding()`
@@ -738,6 +821,7 @@ These functions were pulled in from the [Open Source](https://en.wikipedia.org/w
 * `seems_utf8()`
 
 ###### `remove_accents($string)`
+
 Removes special characters and replaces them with their ASCII counterparts
 
 ```php
@@ -749,9 +833,11 @@ remove_accents('René')
 ```
 
 ### Optional Packages
+
 Optional packages suggested by this are required for these functions to work.
 
 #### `markdown2html($markdown)`
+
 Uses [league/commonmark](https://commonmark.thephpleague.com/) to transform Markdown into HTML.
 
 * `$ composer require league/commonmark`
@@ -762,6 +848,7 @@ markdown2html('# Header');
 ```
 
 #### `domain($url)`
+
 Uses [jeremykendall/php-domain-parser](https://github.com/jeremykendall/php-domain-parser) to return the domain only from a URL, removing protocol, subdomain and path.
 
 * `$ composer require jeremykendall/php-domain-parser`
@@ -772,7 +859,9 @@ domain('https://repat.de/about?foo=bar');
 ```
 
 ### HTML
+
 #### `linkify($string, $protocols = ['http', 'https', 'mail'], $attributes)`
+
 Returns the string with all URLs for given protocols made into links. Optionally, attributes for the [a tag](https://www.w3.org/TR/html4/struct/links.html) can be passed.
 
 ```php
@@ -784,6 +873,7 @@ linkify('https://google.com is a search engine', ['https'], ['target' => '_blank
 ```
 
 #### `embedded_video_url($url)`
+
 Returns the embedded version of a given [YouTube](https://youtube.com) or [Vimeo](https://vimeo.com) URL.
 
 ```php
@@ -795,6 +885,7 @@ embedded_video_url('https://vimeo.com/50491748');
 ```
 
 #### `ul_li_unpack($array, $separator)`
+
 Unpacks an associated array into an [unordered list](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul). Default separator is `:`.
 
 ```php
@@ -806,6 +897,7 @@ ul_li_unpack(['foo' => 'bar'], '=>');
 ```
 
 #### `contrast_color($bgColor)`
+
 Uses the Luminosity Contrast algorithm to determine if white or black
 would be the best contrast color for a given hex background color.
 
@@ -819,7 +911,25 @@ contrast_color('#496379');
 // returns: #ffffff
 ```
 
+### Flags
+
+#### `emoji_flag($iso)`
+
+Returns the emoji flag for a [ISO-3166 alpha-2](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) code, such as `nz` for _New Zealand_ or `py` for _Paraguay_. Lowercase / Uppercase doesn't play a role. Will return a waving black flag for non existing country code (or rather, Unicode doesn't have a flag for it) or `null`. `XK` will give you the flag of [Kosovo](https://en.wikipedia.org/wiki/International_recognition_of_Kosovo).
+
+```php
+emoji_flag('nz');
+// returns: 🇳🇿
+
+emoji_flag('PY');
+// returns: 🇵🇾
+
+emoji_flag(null);
+// returns: 🏴
+```
+
 ### Constants
+
 * `PARETO_HIGH`: 80
 * `PARETO_LOW`: 20
 * `MARIADB_DEFAULT_STRLEN`: 191
@@ -856,17 +966,22 @@ TLS_DHE_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_AES_256_CBC_SHA256, TLS_DH
 * `INET6_ADDRSTRLEN`: 46
 
 ## Contributors
-* https://github.com/bertholf
+
+* [https://github.com/bertholf](https://github.com/bertholf)
 
 ## License
+
 * MIT, see [LICENSE](https://github.com/repat/php-helper/blob/master/LICENSE)
 
 ## Version
-* Version 0.1.18
+
+* Version 0.1.19
 
 ## Contact
-#### repat
-* Homepage: https://repat.de
+
+### repat
+
+* Homepage: [https://repat.de](https://repat.de)
 * e-mail: repat@repat.de
 * Twitter: [@repat123](https://twitter.com/repat123 "repat123 on twitter")
 

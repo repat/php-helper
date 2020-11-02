@@ -348,3 +348,23 @@ if (! function_exists('contains_numbers')) {
         return (bool) preg_match_all(REGEX_NUMBERS, strval($string));
     }
 }
+
+if (! function_exists('country_name')) {
+    /**
+     * Converts ISO 3166-1 alpha 2 code to name, potentially in `$locale` language
+     *
+     * @param string $iso
+     * @param string|null $locale
+     * @return string
+     */
+    function country_name(string $iso3166, ?string $locale = null) : bool
+    {
+        if (strlen($iso3166) !== 2) {
+            throw new \Exception('ISO code is not 2 characters long');
+        }
+        if (is_string($locale)) {
+            return locale_get_display_region('-' . $iso3166, substr($locale, 0, 2));
+        }
+        return locale_get_display_region('-' . $iso3166);
+    }
+}
