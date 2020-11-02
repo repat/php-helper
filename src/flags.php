@@ -9,7 +9,9 @@ if (! function_exists('emoji_flag')) {
      */
     function emoji_flag(?string $countryCode = null) : string
     {
-        $countryCode = strtoupper($countryCode);
+        if (is_string($countryCode)) {
+            $countryCode  = strtoupper($countryCode);
+        }
 
         $emojiFlags = [];
         $emojiFlags['AD'] = "\u{1F1E6}\u{1F1E9}";

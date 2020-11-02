@@ -975,7 +975,7 @@ TLS_DHE_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_AES_256_CBC_SHA256, TLS_DH
 
 ## Version
 
-* Version 0.1.19
+* Version 0.1.20
 
 ## Contact
 

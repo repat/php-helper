@@ -357,7 +357,7 @@ if (! function_exists('country_name')) {
      * @param string|null $locale
      * @return string
      */
-    function country_name(string $iso3166, ?string $locale = null) : bool
+    function country_name(string $iso3166, ?string $locale = null) : string
     {
         if (strlen($iso3166) !== 2) {
             throw new \Exception('ISO code is not 2 characters long');
