@@ -16,29 +16,34 @@ if (! function_exists('markdown2html')
 }
 
 if (! function_exists('domain')
-    && class_exists(\Pdp\Cache::class)
-    && class_exists(\Pdp\CurlHttpClient::class)
-    && class_exists(\Pdp\Manager::class)) {
+    && class_exists(\Pdp\Rules::class)) {
     /**
      * Gets domain without subdomain etc
      *
      * @param  string $url
+     * @param  string $path
      * @return string|null
      */
-    function domain(string $url) : ?string
+    function domain(string $url, string $path) : ?string
     {
-        $manager = new \Pdp\Manager(new \Pdp\Cache(), new \Pdp\CurlHttpClient());
-        $rules = $manager->getRules();
+        $publicSuffixList = \Pdp\Rules::fromPath($path);
+        $host = null;
 
         try {
-            $result = $rules->resolve($url);
+            $host = parse_url($url, PHP_URL_HOST);
+        } catch (\Exception $e) {
+            return null;
+        }
+
+        try {
+            $result = $publicSuffixList->resolve($host);
         } catch (\Exception $e) {
             return null;
         }
 
         // If domain parsing worked
-        if (! empty($result->getRegistrableDomain()) && $result->isICANN()) {
-            return $result->getRegistrableDomain();
+        if (! empty($result->registrableDomain()->toString()) && $result->suffix()->isICANN()) {
+            return $result->registrableDomain()->toString();
         }
 
         return null;

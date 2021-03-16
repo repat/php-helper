@@ -847,14 +847,21 @@ markdown2html('# Header');
 // returns: <h1>Header</h1>\n
 ```
 
-#### `domain($url)`
+#### `domain($url, $publicSuffixList)`
 
-Uses [jeremykendall/php-domain-parser](https://github.com/jeremykendall/php-domain-parser) to return the domain only from a URL, removing protocol, subdomain and path.
+Uses [jeremykendall/php-domain-parser](https://github.com/jeremykendall/php-domain-parser) to return the domain only from a URL, removing protocol, subdomain (including _www_) and path. For that the package needs a public suffix list, which can be found at [publicsuffix.org](https://publicsuffix.org).
 
 * `$ composer require jeremykendall/php-domain-parser`
 
 ```php
-domain('https://repat.de/about?foo=bar');
+// Don't use this code, it's just to illustrate where the file could be
+$publicSuffixList = file_get_contents('https://publicsuffix.org/list/public_suffix_list.dat');
+$path = '/tmp/public_suffix_list.dat';
+file_put_contents($path, $publicSuffixList);
+
+// ...
+
+domain('https://repat.de/about?foo=bar', $path);
 // returns: repat.de
 ```
 
@@ -975,7 +982,7 @@ TLS_DHE_RSA_WITH_AES_256_GCM_SHA384, TLS_DHE_RSA_WITH_AES_256_CBC_SHA256, TLS_DH
 
 ## Version
 
-* Version 0.1.20
+* Version 0.1.21
 
 ## Contact
 
