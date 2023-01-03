@@ -117,9 +117,9 @@ if (! function_exists('timezone_list')) {
             $offsetPrefix = $offset < 0 ? '-' : '+';
             $offsetFormatted = gmdate('H:i', abs($offset));
 
-            $prettyOffset = "UTC${offsetPrefix}${offsetFormatted}";
+            $prettyOffset = "UTC{$offsetPrefix}{$offsetFormatted}";
 
-            $timezoneList[$timezone] = "(${prettyOffset}) $timezone";
+            $timezoneList[$timezone] = "({$prettyOffset}) $timezone";
         }
 
         return $timezoneList;
